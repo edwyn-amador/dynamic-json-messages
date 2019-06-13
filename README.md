@@ -1,6 +1,6 @@
 # Dynamic-JSON-Messages (DJM)
 
-Dynamic-Json-Messges (DJM) by Edwyn Amador
+Dynamic-JSON-Messges (DJM) by Edwyn Amador
 
 In simple terms DJM reads a JSON file retrieving a node per run (from the first to the last one and repeating) in a dynamic way.
 
