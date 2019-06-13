@@ -5,9 +5,9 @@ const selectJsonKey = document.querySelector("#select-json-key");
 const selectResponse = document.querySelector("#select-response");
 const appendNodeCheckbox = document.querySelector("#append-node");
 const alertCheckbox = document.querySelector("#alert");
-const reloadButton = document.querySelector("#reload");
+// const reloadButton = document.querySelector("#reload");
 const runButton = document.querySelector("#run");
-// const responseButton = document.querySelector("#response");
+const responseButton = document.querySelector("#response");
 const resetButton = document.querySelector("#reset");
 const textArea = document.querySelector("#textArea");
 
