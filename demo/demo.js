@@ -106,7 +106,7 @@ selectJsonKey.addEventListener("change", () => {
 });
 
 function populateSelect() {
-  DJM._LoadJSONFileAsync("../data/dynamic-messages.json", data => {
+  DJM._LoadJSONFileAsync("dynamic-messages.json", data => {
     const jsonKeys = Object.keys(data);
     selectJsonKey.options.length = 0;
     for (let i = 0; i < jsonKeys.length; i++) selectJsonKey.options[selectJsonKey.options.length] = new Option(jsonKeys[i]);
