@@ -63,7 +63,6 @@ function run(response) {
   })
     .then(result => {
       const r = appendNodeCheckbox.checked ? JSON.stringify(result) : result.message;
-      // eslint-disable-next-line no-alert
       if (alertCheckbox.checked) alert(r);
       if (result.clearLog) textArea.textContent = "";
       textArea.append(`${r}\n`);
@@ -76,7 +75,6 @@ function run(response) {
         selectResponse.disabled = responseButton.disabled = false;
       } else selectResponse.disabled = responseButton.disabled = true;
     })
-    // eslint-disable-next-line no-alert
     .catch(e => alert(e.message));
 }
 
@@ -107,7 +105,7 @@ selectJsonKey.addEventListener("change", () => {
 });
 
 viewJsonFile.addEventListener("click", () => {
-  window.open("/dynamic-messages.json", "_blank");
+  window.open("./dynamic-messages.json", "_blank");
 });
 
 function populateSelect() {
