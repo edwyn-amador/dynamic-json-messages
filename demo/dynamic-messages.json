@@ -1,0 +1,412 @@
+{
+  "Introduction": [
+    { "message": "DJM Introduction (Click on 'RUN' after reading each message)", "clearLog": true },
+    {
+      "message": "Ok, let's start. In simple terms DJM reads a JSON file retrieving a node per run (from the first to the last one and repeating).",
+      "clearLog": true
+    },
+    {
+      "message": "At this point the functionality itself doesn't seems to do anything more than showing a simple sequence of messages.",
+      "clearLog": true
+    },
+    { "message": "But DJM works in a dynamic way and this is where it gets interesting.", "clearLog": true },
+    {
+      "message": "The reason I coded this library was because I wanted to implement some dynamic and user-friendly functionality for a Chrome Extension project I was working on.",
+      "clearLog": true
+    },
+    {
+      "message": "So if you are a creative developer I'm sure you could get the most of this library and make something cool with it :)",
+      "clearLog": true
+    },
+    {
+      "message": "As I said before DJM works in a dynamic way, and so that's how it's meant to be used.\nIn other words, to help you to create some dynamic implementation.",
+      "clearLog": true
+    },
+    { "message": "So, when we talk about dynamic we also think in interaction right?", "clearLog": true },
+    {
+      "message": "That's why DJM has something called 'responses' which allows to the user to interact with the retrieved nodes.",
+      "clearLog": true
+    },
+    { "message": "So yeah, DJM can also be used to build quizzes.", "clearLog": true },
+    { "message": "For example I can have some feedback from you right now.", "clearLog": true },
+    {
+      "message": "From 1 to 5. How do you feel right now?\n(Answer from the menu select above)",
+      "response": [
+        {
+          "1": [{ "message": "Oh, well I wish you feel better soon.", "clearLog": true }],
+          "2": [{ "message": "Well, it could be worst i'm sure you'll feel better soon.", "clearLog": true }],
+          "3": [{ "message": "I get it, life is not always that perfect but you're very well balanced :)", "clearLog": true }],
+          "4": [{ "message": "Nice, you're pretty good then :)", "clearLog": true }],
+          "5": [{ "message": "Excelent! I'm glad of knowing that :)", "clearLog": true }]
+        }
+      ],
+      "*required": 1,
+      "clearLog": true
+    },
+    {
+      "message": "Did you noticed that response was required?",
+      "response": [
+        {
+          "yes": [{ "message": "So you tried to skip it ha :)", "clearLog": true }],
+          "no": [{ "message": "That means you answered without trying to skip it, well, now you know it :)", "clearLog": true }]
+        }
+      ],
+      "clearLog": true
+    },
+    { "message": "By the way, the previous response wasn't required.", "clearLog": true },
+    { "message": "There's also something called 'sequences' which is pretty self explanatory.", "clearLog": true },
+    {
+      "message": "Sequences can be useful to conditionally go through a different flow of subnodes based on a given response.",
+      "clearLog": true
+    },
+    { "message": "Let's see a pretty simple school-like example.\n(Try to skip without sending a response first)", "clearLog": true },
+    {
+      "message": "Do you have your ID with you?",
+      "response": [
+        {
+          "yep": [
+            {
+              "message": "Just let me see it.",
+              "sequence": [{ "message": "Perfect [name], welcome to the BAR.", "clearLog": true }],
+              "clearLog": true
+            }
+          ]
+        },
+        { "nope": [{ "message": "Sorry, i can't let you in.", "clearLog": true }] }
+      ],
+      "*required": {
+        "message": "Please answer me first.\n(So you can also implement your own custom messages when defining a node which response is required)",
+        "clearLog": true
+      },
+      "clearLog": true
+    },
+    { "message": "Narrator: For good or for bad this is how the story ends.", "clearLog": true },
+    {
+      "message": "So, maybe you noticed that after sending a response you can't change it. This default behaviour can be changed.",
+      "clearLog": true
+    },
+    {
+      "message": "How's your day going?\n(Try this time to send a response and then change it as many times as you like).",
+      "response": [
+        { "good": [{ "message": "Glad to know it :)", "clearLog": true }] },
+        { "excellent": [{ "message": "That's perfect!", "clearLog": true }] }
+      ],
+      "*required": 1,
+      "*repeatResponse": 1,
+      "clearLog": true
+    },
+    {
+      "message": "As you see that would be useful in some specific cases where you want to the user to be able to modify the given response :)",
+      "clearLog": true
+    },
+    {
+      "message": "Another interesting feature is that sequences can be alternated.",
+      "sequence": [
+        {
+          "message": "You're seeing this alternated message the first time.\n(Next time you'll see the next one)",
+          "clearLog": true
+        },
+        {
+          "message": "This alternated message is shown the second time.\n(Next time you'll see the next one)",
+          "clearLog": true
+        },
+        {
+          "message": "This last alternated message is shown the third time.\n(Next time you'll see the first one)",
+          "clearLog": true
+        }
+      ],
+      "*alternate": 1,
+      "clearLog": true
+    },
+    {
+      "message": "Sequences can also be implemented without a defined parent node.\n(This may be easier to understand by taking a look to the below node definitions in the JSON file)\nThis was specially implemented to be used on alternate sequences.",
+      "clearLog": true
+    },
+    {
+      "sequence": [
+        {
+          "message": "This implementaiton of alternated message is shown the first time.\n(Next time you'll see the next one)",
+          "clearLog": true
+        },
+        {
+          "message": "This implementaiton of alternated message is shown the second time.\n(Next time you'll see the next one)",
+          "clearLog": true
+        },
+        {
+          "message": "This last implementaiton of alternated message is shown the third time.\n(Next time you'll see the first one)",
+          "clearLog": true
+        }
+      ],
+      "*alternate": 1
+    },
+    {
+      "message": "Responses are already alternated whether it has more than one response node definition.",
+      "response": [
+        {
+          "something": [
+            {
+              "message": "You're seeing this response message the first time.\n(Next time you'll see the next one)",
+              "clearLog": true
+            },
+            {
+              "message": "This response message is shown the second time.\n(Next time you'll see the next one)",
+              "clearLog": true
+            },
+            {
+              "message": "This last response message is shown the third time.\n(Next time you'll see the first one)",
+              "clearLog": true
+            }
+          ]
+        }
+      ],
+      "*required": {
+        "message": "Send the response to continue.",
+        "clearLog": true
+      },
+      "clearLog": true
+    },
+    { "message": "There exist some useful templates too.", "clearLog": true },
+    {
+      "message": "'Replace Template' is the simplest one, which makes possible to easily replace some specific text to another one.",
+      "clearLog": true
+    },
+    { "message": "So you can define something like: [month]/[day]/[year] - [time]", "clearLog": true },
+    { "message": "Which will be replaced to: {month}/{day}/{year} - {time}", "clearLog": true },
+    {
+      "message": "Then we have the 'Exclude Template' which makes possible to exclude some specific nodes from be shown.",
+      "clearLog": true
+    },
+    { "message": "Now you might be asking yourself what is the point to define nodes which will be excluded...", "clearLog": true },
+    { "message": "Well, the key here is that the template has an 'active' property on each definition.", "clearLog": true },
+    { "message": "This means you can conditionally exclude some specific nodes that matches some criteria.", "clearLog": true },
+    {
+      "message": "So for example you can show different nodes whether is in the morning, afternoon, evening or night, this makes DJM even more dynamic! :)",
+      "clearLog": true
+    },
+    {
+      "message": "You're seeing this because it's in the the morning :)\n(5 am to 11:59 pm)",
+      "exclude": "morning_only",
+      "clearLog": true
+    },
+    {
+      "message": "You're seeing this because it's in the the afternoon :)\n(12 pm to 4:59 pm)",
+      "exclude": "afternoon_only",
+      "clearLog": true
+    },
+    {
+      "message": "You're seeing this because it's in the the evening :)\n(5 pm to 8:59 pm)",
+      "exclude": "evening_only",
+      "clearLog": true
+    },
+    {
+      "message": "You're seeing this because it's in the night :)\n(9 pm to 4:59 am)",
+      "exclude": "night_only",
+      "clearLog": true
+    },
+    {
+      "message": "Then we have the 'Merge Template' which makes possible to merge multiple JSON keys node definitions as one.",
+      "clearLog": true
+    },
+    {
+      "message": "This template also has the same 'active' property, so it can be useful to better organize and manage your node definitions while you conditionally include or exclude node definitions in a different way.",
+      "clearLog": true
+    }
+  ],
+  "IntroductionPartII": [
+    {
+      "message": "Did you noticed we're now in a different JSON key node definition? ... Yep, it is. (This is 'IntroductionPartII')",
+      "clearLog": true
+    }
+  ],
+  "IntroductionPartIII": [
+    {
+      "message": "If you're consulting 'Introduction' key and you're seeing this is simply because the current minutes are odd. ({time})\n(This is 'IntroductionPartIII', another JSON key conditional node definition)",
+      "clearLog": true
+    }
+  ],
+  "IntroductionPartIV": [
+    {
+      "message": "Now, remember we're working with nodes here, so the good notice about this is that you can define your own custom properties.\n(Btw this is 'IntroductionPartIV', another JSON key node definition)",
+      "clearLog": true
+    },
+    {
+      "message": "This means you can enhance the functionality by simply implementing some custom action when a specific property and value is retrieved from the returned node.\nSimple, but clean and useful!",
+      "clearLog": true
+    },
+    {
+      "message": "As for example I'm clearing this textarea on each run because of the existence of the property 'clearLog' in each node definition :)\n(Other samples won't clear the log)",
+      "clearLog": true
+    },
+    {
+      "message": "Make sure to also read the documentation to learn more about DJM.",
+      "clearLog": true
+    },
+    {
+      "message": "After this message, it will start over from the first node.\nAt this point the JSON file will be reloaded on the next run, so every change made (if any) will be now reflected.\n(Notice how the alternate sequences and responses change this time)\n\nIn case you're wondering how to stop the cycle at some point, remember about the custom node properties? Just set your own property at some point to handle from calling DJM again.",
+      "clearLog": true
+    }
+  ],
+  "SimpleAlternate": [
+    {
+      "sequence": [
+        { "message": "I" },
+        { "message": "Hate" },
+        { "message": "When" },
+        { "message": "I'm" },
+        { "message": "Being" },
+        { "message": "Interrupted" }
+      ],
+      "*alternate": 1
+    },
+    { "message": "Blah!" }
+  ],
+  "SimpleFlowAndAlternate": [
+    { "message": "10" },
+    { "message": "9" },
+    { "message": "8" },
+    { "message": "7" },
+    { "message": "6" },
+    { "message": "5" },
+    { "message": "4" },
+    { "message": "3" },
+    { "message": "2" },
+    { "message": "1", "sequence": [{ "message": "Merry Christmas for y'all!" }, { "message": "Happy new year!" }], "*alternate": 1 }
+  ],
+  "DummyFooBarStory": [
+    {
+      "message": "Do you have your ID with you?",
+      "response": [
+        { "yep": [{ "message": "Just let me see it", "sequence": [{ "message": "Perfect [name], welcome to the BAR" }] }] },
+        { "nope": [{ "message": "Sorry, i can't let you in" }] }
+      ],
+      "*required": { "message": "Please answer me first" }
+    },
+    { "message": "Narrator: For good or for bad this is how the story ends" }
+  ],
+  "ComplexNodes": [
+    {
+      "message": "Dummy complex nodes test",
+      "response": [
+        {
+          "accept": [
+            {
+              "message": "A",
+              "sequence": [
+                { "message": "A _" },
+                { "message": "A _ _" },
+                { "message": "A _ _ _" },
+                { "message": "A _ _ _ _" },
+                { "message": "A _ _ _ _ _" }
+              ],
+              "*alternate": "1"
+            },
+            {
+              "message": "B",
+              "sequence": [
+                { "message": "B _" },
+                {
+                  "message": "B _ _",
+                  "sequence": [
+                    {
+                      "message": "B _ _ _"
+                    },
+                    {
+                      "message": "B _ _ _ _",
+                      "response": [
+                        {
+                          "accept": [
+                            {
+                              "message": "C",
+                              "sequence": [{ "message": "C _" }, { "message": "C _ _" }]
+                            }
+                          ]
+                        },
+                        {
+                          "accept": [
+                            {
+                              "message": "C2",
+                              "sequence": [{ "message": "C2 _" }, { "message": "C2 _ _" }]
+                            }
+                          ]
+                        },
+                        {
+                          "accept": [
+                            {
+                              "message": "C3",
+                              "sequence": [
+                                { "message": "C3 _" },
+                                { "message": "C3 _ _" },
+                                { "message": "C3 _ _ _" },
+                                {
+                                  "id": "hand",
+                                  "message": "C3 _ _ _ _ (OPTIONAL RESPONSE)",
+                                  "response": [
+                                    {
+                                      "accept": [
+                                        {
+                                          "message": "C3 RESPONSE",
+                                          "sequence": [{ "message": "C3 RESPONSE _" }, { "message": "C3 RESPONSE _ _" }]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "*repeatResponse": "1"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "*required": true
+                    },
+                    {
+                      "message": "B _ _ _ _ SAME LEVEL",
+                      "sequence": [
+                        { "id": "hand", "message": "B _ _ _ _ SUBLEVEL NORMAL" },
+                        { "id": "hand", "message": "B _ _ _ _ SUBLEVEL ALTERNATED" }
+                      ],
+                      "*alternate": 1
+                    }
+                  ]
+                },
+                {
+                  "message": "B _ _ SAME LEVEL",
+                  "sequence": [{ "message": "B _ _ SAME LEVEL SUBLEVEL *" }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "accept": [
+            {
+              "message": "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+              "sequence": [{ "message": "D _" }, { "message": "D _ _" }]
+            },
+            {
+              "id": "flying-dude",
+              "message": "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 2",
+              "sequence": [{ "message": "D _ 2 " }, { "message": "D _ _ 2" }]
+            }
+          ]
+        },
+        {
+          "accept": [
+            {
+              "message": "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+              "sequence": [{ "message": "E _" }, { "message": "E _ _" }]
+            },
+            {
+              "message": "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 2",
+              "sequence": [{ "message": "E _ 2 " }, { "message": "E _ _ 2" }]
+            }
+          ]
+        }
+      ],
+      "*required": { "message": "* This response is required" }
+    },
+    {
+      "message": "JUST ANOTHER ONE"
+    }
+  ]
+}
