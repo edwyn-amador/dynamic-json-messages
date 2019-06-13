@@ -309,7 +309,7 @@ ___
     just make sure to not define any property starting with "*DJM" on the JSON file, other
     than that you're free to define your own properties as you like.
   
-  - This is the complete version of DJM. There exists two more versions (balanced and essential),
+  - This documentation is for the complete version of DJM. There exists two more versions (balanced and essential),
     balanced version doesn't have replace and merge template functionality support, while in the
     other hand essential version doesn't have the previously mentioned plus doesn't have exclude
     template and debounce functionality support, in case you're strictly looking for even better
