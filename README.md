@@ -315,8 +315,13 @@ ___
     template and debounce functionality support, in case you're strictly looking for even better
     performance and/or a smaller file size (and compiled/minified version isn't enough), you
     could check them out and decide which one is enough for your needs.
-    
+
+#### Disclaimer
+
+DJM does not offer any kind of guarantee. I am not responsible for its misuse or for any possible damage caused by it.
+
 #### License
+
 This project is licensed under the MIT License.
   
 *</ You're now ready to give it a try. Happy Coding! - Ed >*
