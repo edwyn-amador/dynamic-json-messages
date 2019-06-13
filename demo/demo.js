@@ -7,7 +7,7 @@ const appendNodeCheckbox = document.querySelector("#append-node");
 const alertCheckbox = document.querySelector("#alert");
 const reloadButton = document.querySelector("#reload");
 const runButton = document.querySelector("#run");
-const responseButton = document.querySelector("#response");
+// const responseButton = document.querySelector("#response");
 const resetButton = document.querySelector("#reset");
 const textArea = document.querySelector("#textArea");
 
@@ -83,7 +83,7 @@ reloadButton.addEventListener("click", () => populateSelect());
 
 runButton.addEventListener("click", () => run());
 
-responseButton.addEventListener("click", () => run(selectResponse.options[selectResponse.selectedIndex].text));
+// responseButton.addEventListener("click", () => run(selectResponse.options[selectResponse.selectedIndex].text));
 
 resetButton.addEventListener("click", () => {
   DJM._Run(selectJsonKey.options[selectJsonKey.selectedIndex].text, { reset: true }).then(result => {
