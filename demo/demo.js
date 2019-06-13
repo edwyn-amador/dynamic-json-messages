@@ -9,7 +9,8 @@ const alertCheckbox = document.querySelector("#alert");
 const runButton = document.querySelector("#run");
 const responseButton = document.querySelector("#response");
 const resetButton = document.querySelector("#reset");
-const textArea = document.querySelector("#textArea");
+const textArea = document.querySelector("#text-area");
+const viewJsonFile = document.querySelector("#view-json-file");
 
 function run(response) {
   const date = new Date();
@@ -103,6 +104,10 @@ resetButton.addEventListener("click", () => {
 selectJsonKey.addEventListener("change", () => {
   selectResponse.options.length = 0;
   selectResponse.disabled = responseButton.disabled = true;
+});
+
+viewJsonFile.addEventListener("change", () => {
+  window.open("/dynamic-messages.json", "_blank");
 });
 
 function populateSelect() {
