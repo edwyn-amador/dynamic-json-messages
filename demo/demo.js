@@ -106,7 +106,7 @@ selectJsonKey.addEventListener("change", () => {
   selectResponse.disabled = responseButton.disabled = true;
 });
 
-viewJsonFile.addEventListener("change", () => {
+viewJsonFile.addEventListener("click", () => {
   window.open("/dynamic-messages.json", "_blank");
 });
 
