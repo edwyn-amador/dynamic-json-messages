@@ -15,7 +15,7 @@
       "clearLog": true
     },
     {
-      "message": "So if you are a creative developer I'm sure you could get the most of this library and make something cool with it :)",
+      "message": "So if you're a creative developer I'm sure you could get the most of this library and make something cool with it :)",
       "clearLog": true
     },
     {
@@ -28,7 +28,7 @@
       "clearLog": true
     },
     { "message": "So yeah, DJM can also be used to build quizzes.", "clearLog": true },
-    { "message": "For example I can have some feedback from you right now.", "clearLog": true },
+    { "message": "For example, I can have some feedback from you right now.", "clearLog": true },
     {
       "message": "From 1 to 5. How do you feel right now?\n(Answer from the menu select above)",
       "response": [
