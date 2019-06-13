@@ -79,11 +79,11 @@ function run(response) {
     .catch(e => alert(e.message));
 }
 
-reloadButton.addEventListener("click", () => populateSelect());
+// reloadButton.addEventListener("click", () => populateSelect());
 
 runButton.addEventListener("click", () => run());
 
-// responseButton.addEventListener("click", () => run(selectResponse.options[selectResponse.selectedIndex].text));
+responseButton.addEventListener("click", () => run(selectResponse.options[selectResponse.selectedIndex].text));
 
 resetButton.addEventListener("click", () => {
   DJM._Run(selectJsonKey.options[selectJsonKey.selectedIndex].text, { reset: true }).then(result => {
