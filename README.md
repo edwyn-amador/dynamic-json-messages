@@ -315,5 +315,8 @@ ___
     template and debounce functionality support, in case you're strictly looking for even better
     performance and/or a smaller file size (and compiled/minified version isn't enough), you
     could check them out and decide which one is enough for your needs.
+    
+#### License
+This project is licensed under the MIT License.
   
 *</ You're now ready to give it a try. Happy Coding! - Ed >*
