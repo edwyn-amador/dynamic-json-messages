@@ -1,3 +1,4 @@
+import "../dist/dynamic-json-messages.compiled.js";
 DJM._Settings({ appendResponses: true });
 let resetRequested = false;
 
