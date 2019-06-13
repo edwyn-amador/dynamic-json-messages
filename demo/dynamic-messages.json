@@ -19,12 +19,11 @@
       "clearLog": true
     },
     {
-      "message": "As I said before DJM works in a dynamic way, and so that's how it's meant to be used.\nIn other words, to help you to create some dynamic implementation.",
+      "message": "As I said before, DJM works in a dynamic way, and so that's how it's meant to be used.\nIn other words, to help you to create some dynamic implementation.",
       "clearLog": true
     },
-    { "message": "So, when we talk about dynamic we also think in interaction right?", "clearLog": true },
     {
-      "message": "That's why DJM has something called 'responses' which allows to the user to interact with the retrieved nodes.",
+      "message": "DJM has also something called 'responses' which allows to the user to interact with the retrieved nodes.",
       "clearLog": true
     },
     { "message": "So yeah, DJM can also be used to build quizzes.", "clearLog": true },
