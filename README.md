@@ -8,6 +8,8 @@ In simple terms DJM reads a JSON file retrieving a node per run (from the first 
 
 DJM can retrieve a simple sequence of nodes but also supports response nodes allowing to the user to interact with. These and other DJM features are described in the starting guide below.
 
+- For a quick and simple demo [click here](https://edwyn-amador.github.io/dynamic-json-messages/demo "Simple Demo")
+
 Starting Guide
 ------
   
