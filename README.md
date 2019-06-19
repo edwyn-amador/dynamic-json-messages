@@ -153,7 +153,7 @@ DJM._Run("some_JSON_key", { replaceTemplate, excludeTemplate, mergeTemplate })
   
 - "**hasSequence**": Appended whether the result node has a "_sequence_" herence property. (boolean)
 - "**hasResponse**": Appended whether the result node has a "_response_" herence property. (boolean)
-- "**hasRequired**": Appended whether the result node has a "_*required_" special property and is enabled. (bool)
+- "**hasRequired**": Appended whether the result node has a "_*required_" special property and is enabled. (boolean)
 - "**hasAlternate**": Appended whether the result node has the "_*alternate_" special property and is enabled. (boolean)
 - "**hasRepeatResponse**": Appended whether the result node has a "_*repeatResponse_" special property and is enabled. (boolean)
 - "**isSequence**": Appended whether the result node comes from a "_sequence_" node. (boolean)
